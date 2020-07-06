@@ -59,7 +59,7 @@ formatter.match({
   "location": "GoogleSteps.i_open_the_Google_website()"
 });
 formatter.result({
-  "duration": 7756585400,
+  "duration": 10409432000,
   "status": "passed"
 });
 formatter.match({
@@ -72,42 +72,130 @@ formatter.match({
   "location": "GoogleSteps.i_search_for_the_keyword(String)"
 });
 formatter.result({
-  "duration": 2083053000,
+  "duration": 4920589400,
   "status": "passed"
 });
 formatter.match({
   "location": "GoogleSteps.i_verify_all_the_main_results_contains_the_keyword()"
 });
 formatter.result({
-  "duration": 209442900,
+  "duration": 468966600,
   "status": "passed"
 });
 formatter.match({
   "location": "GoogleSteps.i_verify_all_the_results_in_People_also_ask_section_contains_the_keyword()"
 });
 formatter.result({
-  "duration": 89448000,
+  "duration": 274799900,
   "status": "passed"
 });
 formatter.match({
   "location": "GoogleSteps.i_verify_all_the_results_in_the_Top_Stories_section_contains_the_keyword()"
 });
 formatter.result({
-  "duration": 66136100,
+  "duration": 100646500,
   "status": "passed"
 });
 formatter.match({
   "location": "GoogleSteps.i_verify_all_the_results_in_the_Videos_section_contains_the_keyword()"
 });
 formatter.result({
-  "duration": 231670200,
+  "duration": 535753700,
   "status": "passed"
 });
 formatter.match({
   "location": "GoogleSteps.i_verify_the_inputted_string_remained_on_the_search_box()"
 });
 formatter.result({
-  "duration": 19517800,
+  "duration": 28320800,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 896035700,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 15,
+  "name": "02 - Validate YouTube result from Google search",
+  "description": "",
+  "id": "validate-google-search-result;02---validate-youtube-result-from-google-search",
+  "type": "scenario",
+  "keyword": "Scenario"
+});
+formatter.step({
+  "line": 16,
+  "name": "I open the Google website",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 17,
+  "name": "I search for the \"the beatles\" keyword",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 18,
+  "name": "I open the first Youtube video result on Google search",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 19,
+  "name": "I pause the video after 10 seconds",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 20,
+  "name": "I verify the video tittle is same to Google result",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "GoogleSteps.i_open_the_Google_website()"
+});
+formatter.result({
+  "duration": 8371993300,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "the beatles",
+      "offset": 18
+    }
+  ],
+  "location": "GoogleSteps.i_search_for_the_keyword(String)"
+});
+formatter.result({
+  "duration": 8446181800,
+  "status": "passed"
+});
+formatter.match({
+  "location": "GoogleSteps.i_open_the_first_Youtube_video_result_on_Google_search()"
+});
+formatter.result({
+  "duration": 6582382000,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "10",
+      "offset": 24
+    }
+  ],
+  "location": "GoogleSteps.i_pause_the_video_after_seconds(int)"
+});
+formatter.result({
+  "duration": 10728618700,
+  "status": "passed"
+});
+formatter.match({
+  "location": "GoogleSteps.i_verify_the_video_tittle_is_same_to_Google_result()"
+});
+formatter.result({
+  "duration": 177975000,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 894657800,
   "status": "passed"
 });
 });

@@ -7,12 +7,23 @@
         "name": "01 - Validate Google search result",
         "description": "",
         "id": "validate-google-search-result;01---validate-google-search-result",
+        "after": [
+          {
+            "result": {
+              "duration": 896035700,
+              "status": "passed"
+            },
+            "match": {
+              "location": "GoogleSteps.closeBrowser()"
+            }
+          }
+        ],
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 7756585400,
+              "duration": 10409432000,
               "status": "passed"
             },
             "line": 7,
@@ -24,7 +35,7 @@
           },
           {
             "result": {
-              "duration": 2083053000,
+              "duration": 4920589400,
               "status": "passed"
             },
             "line": 8,
@@ -42,7 +53,7 @@
           },
           {
             "result": {
-              "duration": 209442900,
+              "duration": 468966600,
               "status": "passed"
             },
             "line": 9,
@@ -54,7 +65,7 @@
           },
           {
             "result": {
-              "duration": 89448000,
+              "duration": 274799900,
               "status": "passed"
             },
             "line": 10,
@@ -66,7 +77,7 @@
           },
           {
             "result": {
-              "duration": 66136100,
+              "duration": 100646500,
               "status": "passed"
             },
             "line": 11,
@@ -78,7 +89,7 @@
           },
           {
             "result": {
-              "duration": 231670200,
+              "duration": 535753700,
               "status": "passed"
             },
             "line": 12,
@@ -90,7 +101,7 @@
           },
           {
             "result": {
-              "duration": 19517800,
+              "duration": 28320800,
               "status": "passed"
             },
             "line": 13,
@@ -99,6 +110,99 @@
               "location": "GoogleSteps.i_verify_the_inputted_string_remained_on_the_search_box()"
             },
             "keyword": "And "
+          }
+        ]
+      },
+      {
+        "line": 15,
+        "name": "02 - Validate YouTube result from Google search",
+        "description": "",
+        "id": "validate-google-search-result;02---validate-youtube-result-from-google-search",
+        "after": [
+          {
+            "result": {
+              "duration": 894657800,
+              "status": "passed"
+            },
+            "match": {
+              "location": "GoogleSteps.closeBrowser()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 8371993300,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "I open the Google website",
+            "match": {
+              "location": "GoogleSteps.i_open_the_Google_website()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 8446181800,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "I search for the \"the beatles\" keyword",
+            "match": {
+              "arguments": [
+                {
+                  "val": "the beatles",
+                  "offset": 18
+                }
+              ],
+              "location": "GoogleSteps.i_search_for_the_keyword(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 6582382000,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "I open the first Youtube video result on Google search",
+            "match": {
+              "location": "GoogleSteps.i_open_the_first_Youtube_video_result_on_Google_search()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 10728618700,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "I pause the video after 10 seconds",
+            "match": {
+              "arguments": [
+                {
+                  "val": "10",
+                  "offset": 24
+                }
+              ],
+              "location": "GoogleSteps.i_pause_the_video_after_seconds(int)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 177975000,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "I verify the video tittle is same to Google result",
+            "match": {
+              "location": "GoogleSteps.i_verify_the_video_tittle_is_same_to_Google_result()"
+            },
+            "keyword": "Then "
           }
         ]
       }

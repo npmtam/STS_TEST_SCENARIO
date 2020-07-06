@@ -15,9 +15,8 @@
     Scenario: 02 - Validate YouTube result from Google search
       Given I open the Google website
       When I search for the "the beatles" keyword
-#      And I open the 1st Youtube video result on Google search
-#      And I play the video
-#      And I pause the video after 10 seconds
-#      Then I verify the video tittle is same to Google result
+      And I open the first Youtube video result on Google search
+      And I pause the video after 10 seconds
+      Then I verify the video tittle is same to Google result
 #      And the video is played accordingly
 #      And the video is paused accordingly

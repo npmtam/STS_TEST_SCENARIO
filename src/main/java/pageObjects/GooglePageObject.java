@@ -1,15 +1,18 @@
 package pageObjects;
 
 import commons.AbstractPage;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pageUIs.GooglePageUI;
+import pageUIs.YoutubePageUI;
 
 import java.util.List;
 
 public class GooglePageObject extends AbstractPage {
     WebDriver driver;
     List<WebElement> elements;
+
 
     public GooglePageObject(WebDriver driver){
         super(driver);
@@ -52,7 +55,16 @@ public class GooglePageObject extends AbstractPage {
 
     public boolean isInputtedStringRemained(String keyword){
         String inputtedString = getAttributeValue(GooglePageUI.GOOGLE_SEARCH_TEXTBOX, "value");
-        System.out.println(inputtedString);
         return inputtedString.contains(keyword);
     }
+
+    public String getFirstVideoTitle(){
+        return getTextElement(GooglePageUI.GOOGLE_VIDEOS_RESULTS);
+    }
+
+    public void clickTo1stVideo(){
+        waitToElementVisible(GooglePageUI.GOOGLE_VIDEOS_RESULTS);
+        clickToElement(GooglePageUI.GOOGLE_VIDEOS_RESULTS);
+    }
+
 }

@@ -1,9 +1,6 @@
 package commons;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -11,6 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class AbstractPage{
     WebDriver driver;
@@ -20,11 +18,17 @@ public class AbstractPage{
     JavascriptExecutor jsExecutor;
     WebDriverWait waitExplicit;
     List<WebElement> elements;
+    Actions action;
     long shortTimeout = 3;
     long longTimeout = 30;
 
     public AbstractPage(WebDriver driver) {
         this.driver = driver;
+        action = new Actions(driver);
+    }
+
+    public void overideGlobalTimeout(long timeout) {
+        driver.manage().timeouts().implicitlyWait(timeout, TimeUnit.SECONDS);
     }
 
     //WEB ELEMENTS
@@ -74,6 +78,11 @@ public class AbstractPage{
         return allText;
     }
 
+    public String getTextElement(String locator){
+        element = driver.findElement(By.xpath(locator));
+        return element.getText();
+    }
+
     public boolean isArrayListContains(List<String> arraylist, String keyword){
         for(String str : arraylist){
             if(!str.toLowerCase().contains(keyword)){
@@ -81,4 +90,34 @@ public class AbstractPage{
             }
         }return true;
     }
+
+    public void sleepInSecond(long numberInSecond) {
+        try {
+            Thread.sleep(numberInSecond * 1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void hoverMouseToElement(String locator) {
+        element = driver.findElement(By.xpath(locator));
+        action.moveToElement(element).perform();
+    }
+
+    public boolean isElementPresentInDOM(String locator) {
+        overideGlobalTimeout(shortTimeout);
+        elements = driver.findElements(By.xpath(locator));
+        overideGlobalTimeout(longTimeout);
+        if (elements.size() > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean isElementDisplayed(String locator) {
+        element = driver.findElement(By.xpath(locator));
+        return element.isDisplayed();
+    }
+
 }
