@@ -1,0 +1,13 @@
+2020-07-06 17:58:08,462 INFO  stepDefinitions.GoogleSteps - Step 01: Open the website
+2020-07-06 17:58:09,339 INFO  stepDefinitions.GoogleSteps - Step 02: Input keyword to the search text box
+2020-07-06 17:58:09,516 INFO  stepDefinitions.GoogleSteps - Step 03: Click on Google search button
+2020-07-06 17:58:11,421 INFO  stepDefinitions.GoogleSteps - Step 04: Check the results list contains the keyword
+2020-07-06 17:58:11,629 INFO  stepDefinitions.GoogleSteps -  -------------------------- PASSED -------------------------- 
+2020-07-06 17:58:11,631 INFO  stepDefinitions.GoogleSteps - Step 05: Check the result at People also ask section contains the keyword
+2020-07-06 17:58:11,721 INFO  stepDefinitions.GoogleSteps -  -------------------------- PASSED -------------------------- 
+2020-07-06 17:58:11,722 INFO  stepDefinitions.GoogleSteps - Step 06: Check the results at Top Stories section contains the keyword
+2020-07-06 17:58:11,788 INFO  stepDefinitions.GoogleSteps -  -------------------------- PASSED -------------------------- 
+2020-07-06 17:58:11,789 INFO  stepDefinitions.GoogleSteps - Step 07: Check the result at Video section contains the keyword
+2020-07-06 17:58:12,020 INFO  stepDefinitions.GoogleSteps -  -------------------------- PASSED -------------------------- 
+2020-07-06 17:58:12,022 INFO  stepDefinitions.GoogleSteps - Step 08: Verify the inputted keyword remained on the search box
+2020-07-06 17:58:12,041 INFO  stepDefinitions.GoogleSteps -  -------------------------- PASSED -------------------------- 
