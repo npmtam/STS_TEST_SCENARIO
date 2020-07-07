@@ -1,23 +1,9 @@
-2020-07-06 22:54:53,940 INFO  stepDefinitions.GoogleSteps - Step 01: Open the website
-2020-07-06 22:54:56,742 INFO  stepDefinitions.GoogleSteps - Step 02: Input keyword to the search text box
-2020-07-06 22:54:57,022 INFO  stepDefinitions.GoogleSteps - Step 03: Click on Google search button
-2020-07-06 22:55:01,660 INFO  stepDefinitions.GoogleSteps - Step 04: Check the results list contains the keyword
-2020-07-06 22:55:02,122 INFO  stepDefinitions.GoogleSteps -  -------------------------- PASSED -------------------------- 
-2020-07-06 22:55:02,132 INFO  stepDefinitions.GoogleSteps - Step 05: Check the result at People also ask section contains the keyword
-2020-07-06 22:55:02,406 INFO  stepDefinitions.GoogleSteps -  -------------------------- PASSED -------------------------- 
-2020-07-06 22:55:02,408 INFO  stepDefinitions.GoogleSteps - Step 06: Check the results at Top Stories section contains the keyword
-2020-07-06 22:55:02,509 INFO  stepDefinitions.GoogleSteps -  -------------------------- PASSED -------------------------- 
-2020-07-06 22:55:02,511 INFO  stepDefinitions.GoogleSteps - Step 07: Check the result at Video section contains the keyword
-2020-07-06 22:55:03,046 INFO  stepDefinitions.GoogleSteps -  -------------------------- PASSED -------------------------- 
-2020-07-06 22:55:03,049 INFO  stepDefinitions.GoogleSteps - Step 08: Verify the inputted keyword remained on the search box
-2020-07-06 22:55:03,076 INFO  stepDefinitions.GoogleSteps -  -------------------------- PASSED -------------------------- 
-2020-07-06 22:55:03,078 INFO  stepDefinitions.GoogleSteps - OS Name = windows 10
-2020-07-06 22:55:03,974 INFO  stepDefinitions.GoogleSteps - ----------------QUIT BROWSER SUCCESS-----------------
-2020-07-06 22:55:09,924 INFO  stepDefinitions.GoogleSteps - Step 01: Open the website
-2020-07-06 22:55:12,355 INFO  stepDefinitions.GoogleSteps - Step 02: Input keyword to the search text box
-2020-07-06 22:55:12,561 INFO  stepDefinitions.GoogleSteps - Step 03: Click on Google search button
-2020-07-06 22:55:20,805 INFO  stepDefinitions.GoogleSteps - Step 09: Open the 1st Youtube video in the result page
-2020-07-06 22:55:27,390 INFO  stepDefinitions.GoogleSteps - Step 10: Wait for 10 seconds
-2020-07-06 22:55:37,653 INFO  stepDefinitions.GoogleSteps - Step 11: Pause the video
-2020-07-06 22:55:38,300 INFO  stepDefinitions.GoogleSteps - OS Name = windows 10
-2020-07-06 22:55:39,195 INFO  stepDefinitions.GoogleSteps - ----------------QUIT BROWSER SUCCESS-----------------
+2020-07-07 17:00:38,959 INFO  stepDefinitions.GoogleSteps - Step 01: Open the website
+2020-07-07 17:00:39,913 INFO  stepDefinitions.GoogleSteps - Step 02: Input keyword to the search text box
+2020-07-07 17:00:40,104 INFO  stepDefinitions.GoogleSteps - Step 03: Click on Google search button
+2020-07-07 17:00:42,168 INFO  stepDefinitions.GoogleSteps - Step 09: Open the 1st Youtube video in the result page
+2020-07-07 17:00:43,769 INFO  stepDefinitions.GoogleSteps - Step 10: Wait for 10 seconds
+2020-07-07 17:00:52,914 INFO  stepDefinitions.GoogleSteps - Step 11: Pause the video
+2020-07-07 17:00:53,327 INFO  stepDefinitions.GoogleSteps -  -------------------------- FAILED -------------------------- 
+2020-07-07 17:00:53,340 INFO  stepDefinitions.GoogleSteps - OS Name = windows 10
+2020-07-07 17:00:54,146 INFO  stepDefinitions.GoogleSteps - ----------------QUIT BROWSER SUCCESS-----------------

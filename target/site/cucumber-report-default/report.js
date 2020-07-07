@@ -13,108 +13,40 @@ formatter.feature({
   ]
 });
 formatter.scenario({
-  "line": 6,
-  "name": "01 - Validate Google search result",
-  "description": "",
-  "id": "validate-google-search-result;01---validate-google-search-result",
-  "type": "scenario",
-  "keyword": "Scenario"
-});
-formatter.step({
-  "line": 7,
-  "name": "I open the Google website",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 8,
-  "name": "I search for the \"the beatles\" keyword",
-  "keyword": "When "
-});
-formatter.step({
-  "line": 9,
-  "name": "I verify all the main results contains the keyword",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 10,
-  "name": "I verify all the results in People also ask section contains the keyword",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 11,
-  "name": "I verify all the results in the Top Stories section contains the keyword",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 12,
-  "name": "I verify all the results in the Videos section contains the keyword",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 13,
-  "name": "I verify the inputted string remained on the search box",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "GoogleSteps.i_open_the_Google_website()"
-});
-formatter.result({
-  "duration": 10409432000,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
+  "comments": [
     {
-      "val": "the beatles",
-      "offset": 18
+      "line": 6,
+      "value": "#  Scenario: 01 - Validate Google search result"
+    },
+    {
+      "line": 7,
+      "value": "#    Given I open the Google website"
+    },
+    {
+      "line": 8,
+      "value": "#    When I search for the \"the beatles\" keyword"
+    },
+    {
+      "line": 9,
+      "value": "#    Then I verify all the main results contains the keyword"
+    },
+    {
+      "line": 10,
+      "value": "#    And I verify all the results in People also ask section contains the keyword"
+    },
+    {
+      "line": 11,
+      "value": "#    And I verify all the results in the Top Stories section contains the keyword"
+    },
+    {
+      "line": 12,
+      "value": "#    And I verify all the results in the Videos section contains the keyword"
+    },
+    {
+      "line": 13,
+      "value": "#    And I verify the inputted string remained on the search box"
     }
   ],
-  "location": "GoogleSteps.i_search_for_the_keyword(String)"
-});
-formatter.result({
-  "duration": 4920589400,
-  "status": "passed"
-});
-formatter.match({
-  "location": "GoogleSteps.i_verify_all_the_main_results_contains_the_keyword()"
-});
-formatter.result({
-  "duration": 468966600,
-  "status": "passed"
-});
-formatter.match({
-  "location": "GoogleSteps.i_verify_all_the_results_in_People_also_ask_section_contains_the_keyword()"
-});
-formatter.result({
-  "duration": 274799900,
-  "status": "passed"
-});
-formatter.match({
-  "location": "GoogleSteps.i_verify_all_the_results_in_the_Top_Stories_section_contains_the_keyword()"
-});
-formatter.result({
-  "duration": 100646500,
-  "status": "passed"
-});
-formatter.match({
-  "location": "GoogleSteps.i_verify_all_the_results_in_the_Videos_section_contains_the_keyword()"
-});
-formatter.result({
-  "duration": 535753700,
-  "status": "passed"
-});
-formatter.match({
-  "location": "GoogleSteps.i_verify_the_inputted_string_remained_on_the_search_box()"
-});
-formatter.result({
-  "duration": 28320800,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 896035700,
-  "status": "passed"
-});
-formatter.scenario({
   "line": 15,
   "name": "02 - Validate YouTube result from Google search",
   "description": "",
@@ -147,11 +79,16 @@ formatter.step({
   "name": "I verify the video tittle is same to Google result",
   "keyword": "Then "
 });
+formatter.step({
+  "line": 21,
+  "name": "the video is paused accordingly",
+  "keyword": "And "
+});
 formatter.match({
   "location": "GoogleSteps.i_open_the_Google_website()"
 });
 formatter.result({
-  "duration": 8371993300,
+  "duration": 7610087200,
   "status": "passed"
 });
 formatter.match({
@@ -164,14 +101,14 @@ formatter.match({
   "location": "GoogleSteps.i_search_for_the_keyword(String)"
 });
 formatter.result({
-  "duration": 8446181800,
+  "duration": 2257045300,
   "status": "passed"
 });
 formatter.match({
   "location": "GoogleSteps.i_open_the_first_Youtube_video_result_on_Google_search()"
 });
 formatter.result({
-  "duration": 6582382000,
+  "duration": 1599119900,
   "status": "passed"
 });
 formatter.match({
@@ -184,18 +121,26 @@ formatter.match({
   "location": "GoogleSteps.i_pause_the_video_after_seconds(int)"
 });
 formatter.result({
-  "duration": 10728618700,
+  "duration": 9354898900,
   "status": "passed"
 });
 formatter.match({
   "location": "GoogleSteps.i_verify_the_video_tittle_is_same_to_Google_result()"
 });
 formatter.result({
-  "duration": 177975000,
+  "duration": 25549200,
   "status": "passed"
 });
+formatter.match({
+  "location": "GoogleSteps.the_video_is_paused_accordingly()"
+});
+formatter.result({
+  "duration": 182569600,
+  "error_message": "java.lang.NullPointerException\r\n\tat commons.AbstractTest.checkTrue(AbstractTest.java:71)\r\n\tat commons.AbstractTest.verifyTrue(AbstractTest.java:77)\r\n\tat stepDefinitions.GoogleSteps.the_video_is_paused_accordingly(GoogleSteps.java:97)\r\n\tat ✽.And the video is paused accordingly(GoogleScenarios.feature:21)\r\n",
+  "status": "failed"
+});
 formatter.after({
-  "duration": 894657800,
+  "duration": 806546600,
   "status": "passed"
 });
 });

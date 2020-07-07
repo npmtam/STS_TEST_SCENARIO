@@ -17,7 +17,7 @@ public class GoogleSteps extends AbstractTest {
     GooglePageObject googlePage;
     YoutubePageObject youtubePage;
 
-    String keyword, videoTitle;
+    String keyword, videoTitle, timeout;
 
     public GoogleSteps(){
         driver = Hooks.openBrowser();
@@ -81,6 +81,7 @@ public class GoogleSteps extends AbstractTest {
     public void i_pause_the_video_after_seconds(int timeout){
         log.info("Step 10: Wait for 10 seconds");
         youtubePage.checkAdsAndWaitForSeconds(timeout);
+        this.timeout = Integer.toString(timeout);
 
         log.info("Step 11: Pause the video");
         youtubePage.clickToPauseBtn();
@@ -89,6 +90,11 @@ public class GoogleSteps extends AbstractTest {
     @Then("^I verify the video tittle is same to Google result$")
     public void i_verify_the_video_tittle_is_same_to_Google_result(){
         youtubePage.isVideoTitleSameResult(videoTitle);
+    }
+
+    @Then("^the video is paused accordingly$")
+    public void the_video_is_paused_accordingly() {
+        verifyTrue(youtubePage.isVideoPausedAccordingly(timeout));
     }
 
     @After

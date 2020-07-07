@@ -1,24 +1,25 @@
 package commons;
 
+import com.google.common.base.Function;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.*;
+import pageUIs.YoutubePageUI;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class AbstractPage{
+public class AbstractPage {
     WebDriver driver;
     WebElement element;
     By by;
-    Select select;
     JavascriptExecutor jsExecutor;
     WebDriverWait waitExplicit;
     List<WebElement> elements;
     Actions action;
+    FluentWait<WebElement> fluentWait;
     long shortTimeout = 3;
     long longTimeout = 30;
 
@@ -27,11 +28,10 @@ public class AbstractPage{
         action = new Actions(driver);
     }
 
-    public void overideGlobalTimeout(long timeout) {
+    public void overrideGlobalTimeout(long timeout) {
         driver.manage().timeouts().implicitlyWait(timeout, TimeUnit.SECONDS);
     }
 
-    //WEB ELEMENTS
     public void clickToElement(String locator) {
         element = driver.findElement(By.xpath(locator));
         element.click();
@@ -65,6 +65,20 @@ public class AbstractPage{
         return element.getAttribute(attributeName);
     }
 
+    public boolean getTextHiddenElement(String locator, String expected){
+        element = driver.findElement(By.xpath(locator));
+        jsExecutor = (JavascriptExecutor) driver;
+        String text = (String) jsExecutor.executeScript("return arguments[0].text();", element);
+        return text.endsWith(expected);
+    }
+
+    public boolean verifyTextInInnerText(String textExpected) {
+        jsExecutor = (JavascriptExecutor) driver;
+        String textActual = (String) jsExecutor
+                .executeScript("document.documentElement.innerText.match('" + textExpected + "')[0]");
+        return textActual.equals(textExpected);
+    }
+
     public List<String> getTextListElements(String locator) {
         String textElement = null;
         List<String> allText = new ArrayList<String>();
@@ -72,23 +86,23 @@ public class AbstractPage{
         for (WebElement item : elements) {
             scrollToElement(item);
             textElement = item.getText();
-//            System.out.println(textElement);
             allText.add(textElement);
         }
         return allText;
     }
 
-    public String getTextElement(String locator){
+    public String getTextElement(String locator) {
         element = driver.findElement(By.xpath(locator));
         return element.getText();
     }
 
-    public boolean isArrayListContains(List<String> arraylist, String keyword){
-        for(String str : arraylist){
-            if(!str.toLowerCase().contains(keyword)){
+    public boolean isArrayListContains(List<String> arraylist, String keyword) {
+        for (String str : arraylist) {
+            if (!str.toLowerCase().contains(keyword)) {
                 return false;
             }
-        }return true;
+        }
+        return true;
     }
 
     public void sleepInSecond(long numberInSecond) {
@@ -105,9 +119,9 @@ public class AbstractPage{
     }
 
     public boolean isElementPresentInDOM(String locator) {
-        overideGlobalTimeout(shortTimeout);
+        overrideGlobalTimeout(shortTimeout);
         elements = driver.findElements(By.xpath(locator));
-        overideGlobalTimeout(longTimeout);
+        overrideGlobalTimeout(longTimeout);
         if (elements.size() > 0) {
             return true;
         } else {
@@ -118,6 +132,23 @@ public class AbstractPage{
     public boolean isElementDisplayed(String locator) {
         element = driver.findElement(By.xpath(locator));
         return element.isDisplayed();
+    }
+
+    public void waitFluentForElement(String locator) {
+        element = driver.findElement(By.xpath(locator));
+        new FluentWait<WebElement>(element)
+                .withTimeout(Duration.ofSeconds(30))
+                .pollingEvery(Duration.ofSeconds(1))
+                .ignoring(NoSuchElementException.class)
+                .ignoring(ElementNotVisibleException.class)
+                .until(new Function<WebElement, Boolean>() {
+                    public Boolean apply(WebElement element) {
+                        String innerText = getTextElement(YoutubePageUI.YOUTUBE_CURRENT_TIME_PLAYED);
+                        System.out.println(innerText);
+                        boolean flag = innerText.contains("0:10");
+                        return flag;
+                    }
+                });
     }
 
 }
